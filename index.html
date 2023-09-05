@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const fragment = document.createDocumentFragment();
+var exSeeds = 1;
+var sumSeeds = 0;
+for (let index = 0; index < 64; index++) {
+    if (index > 0) exSeeds *= 2;
+    sumSeeds += exSeeds;
+    const div = document.createElement('div');
+    div.textContent = `Casilla: ${index+1}, Semillas ${exSeeds}, Sumatoria ${sumSeeds}`;
+    fragment.appendChild(div);
+}
+const seedKilograms = sumSeeds/25000;
+const div = document.createElement('div');
+div.textContent = `Kilogramos = ${seedKilograms}`;
+fragment.appendChild(div);
+const div2 = document.createElement('div');
+div2.textContent = `Toneladas = ${seedKilograms/1000}`;
+fragment.appendChild(div2);
+document.body.appendChild(fragment);
+</script>
+</html>
